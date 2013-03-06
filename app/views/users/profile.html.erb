@@ -1,0 +1,10 @@
+<% if @user %>
+    <h1>User Profile for <%= [@user.forename, @user.surname].join(" ") %></h1>
+
+    <p>screen name: <%= @user.screen_name %></p>
+    <p>occupation: <%= @user.occupation %></p>
+    <p>town/city: <%= @user.town %></p>
+
+<% else %>
+    <h1>No User Profile for: <%= @screen_name %></h1>
+<% end %>

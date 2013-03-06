@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+#loginarea {
+        background-color: lightgrey;
+        float: right;
+        border-color: black;
+        width: 20%;
+        border-style: double;
+        border-width: medium;
+        padding: 10px 0px 10px 10px;
+}
+
+#firstrow {
+        background-color: #d3d3d3;
+        float: left;
+        width: 28%;
+        border-color: black;
+        border-top-style: double;
+        border-right-style: double;
+        border-left-style: double;
+        border-width: medium;
+        padding: 10px 0px 5px 10px;
+}
+
+#firstrow2 {
+        background-color: #d3d3d3;
+        float: left;
+        width: 28%;
+        border-color: black;
+        border-style: double;
+        border-width: medium;
+        padding: 10px 0px 10px 10px;
+
+}
+
+#secondrow {
+        background-color: lightgrey;
+        width: 28%;
+        border-color: black;
+        border-bottom-style: double;
+        border-right-style: double;
+        border-left-style: double;
+        border-width: medium;
+        padding: 0px 0px 10px 10px;
+}
+
+td {
+    border-style: dotted;
+    border-width: thin;
+    border-color: black;
+    padding: 5px 10px 5px 10px;
+}

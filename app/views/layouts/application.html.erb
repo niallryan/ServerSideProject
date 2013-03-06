@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InstrumentShop</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+    <% if logged_in? %>
+
+        <div id="loggedinmenu">
+
+            <div id="firstrow">
+                <%= link_to "Home", :controller => "welcome", :action => "home" %> |
+                <%= link_to "Product Catalogue", products_path %> |
+                <%= link_to "Leave Site", :controller => "welcome", :action => "thank_you" %> |
+             <!--  <# %= link_to "User Profile", :controller => "users", :action => "show" %> -->
+            </div>
+
+            <div id="loginarea">
+                <%= "You are logged in." %>     <br />
+                <%= link_to 'Logout', logout_path %>
+            </div>
+
+            <div id="secondrow">
+                <%= current_user.email %> |
+                <%= link_to "Your Cart", :controller => "carts", :action => "your_cart" %> |
+              <% if current_user and current_user.admin %>
+                <%= link_to "Create User", new_user_path %> |
+                <%= link_to "Orders", :controller => "orders", :action => "index" %> |
+              <% end %>
+            </div>
+
+        </div>
+
+
+    <% else %>
+
+        <div id="notloggedinmenu">
+
+            <div id="firstrow2">
+                <%= link_to "Product Catalogue", products_path %> |
+                <%= link_to "Register", :controller => "welcome", :action => "register" %> |
+                <%= link_to "Home", :controller => "welcome", :action => "home" %>
+            </div>
+
+            <div id="loginarea">
+
+                <h1>Login</h1>
+                <%= form_tag sessions_path do %>
+
+                <div class="field">
+                    <%= label_tag :email %><br />
+                    <%= text_field_tag :email %>
+                </div>
+                <div class="field">
+                    <%= label_tag :password %><br />
+                    <%= password_field_tag :password %>
+                </div>
+                <div class="actions">
+                    <%= submit_tag 'Login' %>
+                </div>
+
+                <% end %>
+
+            </div>
+        </div>
+
+    <% end %>
+
+    <br />
+    <br />
+
+<%= yield %>
+
+</body>
+</html>
